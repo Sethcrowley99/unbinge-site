@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/community", "destination": "/community-guidelines", "permanent": true }
+  ]
+}

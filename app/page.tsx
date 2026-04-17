@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -9,7 +10,6 @@ export default function Home() {
           <Link href="/" className="wordmark">Unbinge</Link>
           <nav className="nav-links">
             <a href="#how">How it works</a>
-            <a href="#features">Features</a>
             <a href="#stages">Growth</a>
             <a href="#community">Community</a>
             <a href="#faq">FAQ</a>
@@ -18,11 +18,11 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ============ HERO ============ */}
-      <section className="hero">
+      {/* ============ HERO — image-driven ============ */}
+      <section className="hero-v3">
         <div className="hero-bg" aria-hidden="true"></div>
-        <div className="container hero-inner">
-          <div className="hero-copy">
+        <div className="container hero-v3-inner">
+          <div className="hero-v3-copy">
             <div className="badge">
               <span className="badge-dot"></span>
               Clinically-grounded · Private · Judgment-free
@@ -31,7 +31,7 @@ export default function Home() {
               Recover from binge eating, <em>gently.</em>
             </h1>
             <p className="lead">
-              Unbinge is a calming companion for people healing their relationship with food. Track the moments that matter, talk to Koa when urges hit, and grow through a recovery journey that meets you where you are.
+              A calming companion for people healing their relationship with food. Track the moments that matter, talk to Koa when urges hit, and grow through a recovery journey that meets you where you are.
             </p>
             <div className="hero-ctas">
               <a href="#download" className="store-badge" aria-label="Download on the App Store">
@@ -58,16 +58,15 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="hero-device">
-            {/* PHONE MOCKUP PLACEHOLDER: swap with actual Home tab screenshot */}
-            <div className="phone phone-home">
-              <div className="phone-inner">
-                <div className="screenshot-placeholder">
-                  <span className="placeholder-label">Home screen</span>
-                  <span className="placeholder-sub">Drop screenshot here</span>
-                </div>
-              </div>
-            </div>
+          <div className="hero-v3-image">
+            <Image
+              src="/listing/01_Stop_Binge_Eating.png"
+              alt="Unbinge app home screen — Stop binge eating, for good, without shame"
+              width={1290}
+              height={2796}
+              priority
+              className="listing-image"
+            />
           </div>
         </div>
       </section>
@@ -81,114 +80,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ HOW IT WORKS ============ */}
-      <section id="how" className="how">
+      {/* ============ FEATURE SHOWCASE — image-driven ============ */}
+      <section id="how" className="showcase">
         <div className="container">
-          <p className="eyebrow">How it works</p>
-          <h2 className="h2">A companion for the whole journey.</h2>
-          <p className="section-lead">Four tools, built to work together. Each one meets a different moment in recovery.</p>
-        </div>
+          <p className="eyebrow">Inside Unbinge</p>
+          <h2 className="h2">Four tools, built to work together.</h2>
+          <p className="section-lead">Each one meets a different moment in recovery.</p>
 
-        <div className="feature feature-alt">
-          <div className="container feature-grid">
-            <div className="feature-copy">
-              <span className="feature-number">01</span>
-              <h3 className="h3">See your progress, without the pressure.</h3>
-              <p>Your home screen shows the streak you&apos;re building, the orb you&apos;re growing, and the check-ins that matter — without turning your recovery into a scoreboard. Tap the streak pill to see the full calendar. Tap the orb to see where you are on the 15-stage growth path.</p>
-              <ul className="check-list">
-                <li>Streak calendar with setback history</li>
-                <li>15-stage garden growth (Seed → Worldtree)</li>
-                <li>Daily commit + honor-check</li>
-              </ul>
+          <div className="showcase-grid">
+            <div className="showcase-item">
+              <Image
+                src="/listing/04_Talk_to_Koa.png"
+                alt="Talk to Koa, day or night — always here, never judging"
+                width={1290}
+                height={2796}
+                className="listing-image"
+              />
             </div>
-            <div className="feature-device">
-              {/* PHONE MOCKUP PLACEHOLDER: Home tab with orb + streak pill */}
-              <div className="phone">
-                <div className="phone-inner">
-                  <div className="screenshot-placeholder">
-                    <span className="placeholder-label">Home tab</span>
-                    <span className="placeholder-sub">Orb + streak + daily commit</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div className="feature">
-          <div className="container feature-grid feature-grid-reverse">
-            <div className="feature-copy">
-              <span className="feature-number">02</span>
-              <h3 className="h3">Talk to Koa when the urge hits.</h3>
-              <p>Koa is Unbinge&apos;s AI companion — a warm, grounded voice trained to respond to binge urges, body thoughts, and the spirals that come in between. Not a therapist. Not a chatbot with a script. Someone to think with, at 3 a.m. if that&apos;s when you need it.</p>
-              <ul className="check-list">
-                <li>Private by default — your chats stay yours</li>
-                <li>Koa is a blue-gray koala, designed to feel calm and grounded</li>
-                <li>Powered by Google Gemini with clinical guardrails</li>
-              </ul>
+            <div className="showcase-item">
+              <Image
+                src="/listing/02_Understand_Your_Patterns.png"
+                alt="Understand your patterns — see the why behind the urge"
+                width={1290}
+                height={2796}
+                className="listing-image"
+              />
             </div>
-            <div className="feature-device">
-              {/* PHONE MOCKUP PLACEHOLDER: Koa chat screen */}
-              <div className="phone">
-                <div className="phone-inner">
-                  <div className="screenshot-placeholder">
-                    <span className="placeholder-label">Koa chat</span>
-                    <span className="placeholder-sub">AI companion conversation</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div className="feature feature-alt">
-          <div className="container feature-grid">
-            <div className="feature-copy">
-              <span className="feature-number">03</span>
-              <h3 className="h3">Patterns you can actually use.</h3>
-              <p>Insights shows you what&apos;s happening underneath — the times of day urges spike, the moods that precede a setback, how your hunger and fullness have shifted over weeks. Clinical data, surfaced gently, so you can recognize yourself in it instead of being graded by it.</p>
-              <ul className="check-list">
-                <li>Overview · Urges · Eating · Mood tabs</li>
-                <li>Eight-mood tracking with body check-ins</li>
-                <li>Hunger/fullness arcs, not calorie counts</li>
-              </ul>
+            <div className="showcase-item">
+              <Image
+                src="/listing/05_Youre_Not_Alone.png"
+                alt="You're not alone — a community without diet talk"
+                width={1290}
+                height={2796}
+                className="listing-image"
+              />
             </div>
-            <div className="feature-device">
-              {/* PHONE MOCKUP PLACEHOLDER: Insights tab */}
-              <div className="phone">
-                <div className="phone-inner">
-                  <div className="screenshot-placeholder">
-                    <span className="placeholder-label">Insights tab</span>
-                    <span className="placeholder-sub">Mood · urges · patterns</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div className="feature">
-          <div className="container feature-grid feature-grid-reverse">
-            <div className="feature-copy">
-              <span className="feature-number">04</span>
-              <h3 className="h3">A quiet community that gets it.</h3>
-              <p>A feed of people doing the same work — sharing wins, struggles, and advice. Moderated, anonymous by default, and built to feel like the best version of a support group, not the worst version of social media.</p>
-              <ul className="check-list">
-                <li>Wins · Struggles · Advice · General</li>
-                <li>&quot;Support&quot; replies instead of comments</li>
-                <li>Block, report, and notification controls</li>
-              </ul>
-            </div>
-            <div className="feature-device">
-              {/* PHONE MOCKUP PLACEHOLDER: Community feed */}
-              <div className="phone">
-                <div className="phone-inner">
-                  <div className="screenshot-placeholder">
-                    <span className="placeholder-label">Community feed</span>
-                    <span className="placeholder-sub">Posts + support replies</span>
-                  </div>
-                </div>
-              </div>
+            <div className="showcase-item">
+              <Image
+                src="/listing/06_Recovery_That_Sticks.png"
+                alt="Recovery that sticks — built to walk with you for life"
+                width={1290}
+                height={2796}
+                className="listing-image"
+              />
             </div>
           </div>
         </div>
@@ -199,7 +136,7 @@ export default function Home() {
         <div className="container">
           <p className="eyebrow">Early voices</p>
           <h2 className="h2">From people testing Unbinge.</h2>
-          <p className="section-lead">Quotes from beta users and clinicians who reviewed the app during TestFlight. Last names removed for privacy.</p>
+          <p className="section-lead">Quotes from beta users who reviewed the app during TestFlight. Last names removed for privacy.</p>
 
           <div className="review-grid">
             <figure className="review-card">
@@ -255,64 +192,6 @@ export default function Home() {
                 <div><strong>Taylor</strong><span>Beta user</span></div>
               </figcaption>
             </figure>
-          </div>
-        </div>
-      </section>
-
-      {/* ============ FEATURE CARDS GRID ============ */}
-      <section id="features" className="feature-grid-section">
-        <div className="container">
-          <p className="eyebrow">Explore the features</p>
-          <h2 className="h2">Everything inside Unbinge.</h2>
-
-          <div className="feature-cards">
-            <article className="feature-card">
-              <div className="feature-icon icon-koa" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="currentColor" opacity="0.15"/><circle cx="24" cy="22" r="10" fill="currentColor"/><circle cx="20" cy="20" r="1.5" fill="#fff"/><circle cx="28" cy="20" r="1.5" fill="#fff"/><path d="M20 26c1 1.5 2.5 2 4 2s3-.5 4-2" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" fill="none"/></svg>
-              </div>
-              <h4>Koa, your AI companion</h4>
-              <p>Talk to Koa 24/7. Trained to respond to binge urges, body thoughts, and hard moments without judgment.</p>
-            </article>
-
-            <article className="feature-card">
-              <div className="feature-icon icon-streak" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="currentColor" opacity="0.15"/><path d="M24 10c3 5 8 8 8 14a8 8 0 01-16 0c0-4 3-6 4-10 1 2 3 3 4 6z" fill="currentColor"/></svg>
-              </div>
-              <h4>Streak &amp; calendar</h4>
-              <p>Build a gentle streak. See setbacks not as failures but as data. Edit your start date whenever life calls for it.</p>
-            </article>
-
-            <article className="feature-card">
-              <div className="feature-icon icon-insights" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="currentColor" opacity="0.15"/><path d="M12 32l6-8 5 4 7-10 6 8" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/></svg>
-              </div>
-              <h4>Pattern insights</h4>
-              <p>Urges, meals, moods, and body check-ins — charted over time so you can recognize your own rhythms.</p>
-            </article>
-
-            <article className="feature-card">
-              <div className="feature-icon icon-community" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="currentColor" opacity="0.15"/><circle cx="18" cy="17" r="4" fill="currentColor"/><path d="M11 33c0-4 3.2-7 7-7s7 3 7 7" fill="currentColor"/><circle cx="32" cy="20" r="3.5" fill="currentColor" opacity="0.6"/><path d="M26 33c0-3.5 2.8-6 6-6s6 2.5 6 6" fill="currentColor" opacity="0.6"/></svg>
-              </div>
-              <h4>Community</h4>
-              <p>A quiet, moderated feed. Share a win, ask for advice, or just read along. You&apos;re never the only one.</p>
-            </article>
-
-            <article className="feature-card">
-              <div className="feature-icon icon-growth" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="currentColor" opacity="0.15"/><path d="M24 34V20M24 20c-3-2-6-2-8 0 1 3 4 4 8 4M24 20c3-2 6-2 8 0-1 3-4 4-8 4M24 14c-1-1-2-2-3-2 0 2 1 3 3 4 2-1 3-2 3-4-1 0-2 1-3 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/></svg>
-              </div>
-              <h4>15-stage growth</h4>
-              <p>From Seed to Worldtree. A non-numerical way to feel the distance you&apos;ve traveled without reducing it to a score.</p>
-            </article>
-
-            <article className="feature-card">
-              <div className="feature-icon icon-breathe" aria-hidden="true">
-                <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="currentColor" opacity="0.15"/><circle cx="24" cy="24" r="10" fill="none" stroke="currentColor" strokeWidth="2"/><circle cx="24" cy="24" r="5" fill="currentColor"/></svg>
-              </div>
-              <h4>Breathe &amp; ground</h4>
-              <p>Six guided exercises — box breathing, 4-7-8, coherence, and more — for the moments when the body needs a pause.</p>
-            </article>
           </div>
         </div>
       </section>
@@ -474,6 +353,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ============ RELIEF MOMENT (image 03 as closing beat) ============ */}
+      <section className="relief-moment">
+        <div className="container">
+          <div className="relief-inner">
+            <div className="relief-copy">
+              <p className="eyebrow">For the hardest moments</p>
+              <h2 className="h2">Tools that meet you where you are.</h2>
+              <p className="lead">Grounding exercises. Soothing soundscapes. An urge tracker that helps you break the cycle. When the moment gets big, Unbinge gets closer — not louder.</p>
+            </div>
+            <div className="relief-image">
+              <Image
+                src="/listing/03_Relief_When_Urges_Hit.png"
+                alt="Relief when urges hit — tools for the hardest moments"
+                width={1290}
+                height={2796}
+                className="listing-image"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ============ FINAL CTA ============ */}
       <section id="download" className="final-cta">
         <div className="container">
@@ -514,8 +415,8 @@ export default function Home() {
             <h5>Product</h5>
             <ul>
               <li><a href="#how">How it works</a></li>
-              <li><a href="#features">Features</a></li>
               <li><a href="#stages">Growth stages</a></li>
+              <li><a href="#community">Community</a></li>
               <li><a href="#faq">FAQ</a></li>
             </ul>
           </div>

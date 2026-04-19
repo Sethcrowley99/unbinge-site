@@ -87,8 +87,8 @@ export default function Home() {
           <h2 className="h2">Four tools, built to work together.</h2>
           <p className="section-lead">Each one meets a different moment in recovery.</p>
 
-          <div className="showcase-grid">
-            <div className="showcase-item">
+          <div className="feature-row">
+            <div className="feature-image">
               <Image
                 src="/listing/04_Talk_to_Koa.png"
                 alt="Talk to Koa, day or night — always here, never judging"
@@ -97,8 +97,15 @@ export default function Home() {
                 className="listing-image"
               />
             </div>
+            <div className="feature-copy">
+              <p className="eyebrow">Companion</p>
+              <h2 className="h2">Talk to Koa, day or night.</h2>
+              <p>Koa is always one tap away — a calm presence when urges hit, when shame gets loud, or when you just need someone to name what you&apos;re feeling. Not a therapist, not a coach. A steady voice that meets you where you are and never judges.</p>
+            </div>
+          </div>
 
-            <div className="showcase-item">
+          <div className="feature-row reverse">
+            <div className="feature-image">
               <Image
                 src="/listing/02_Understand_Your_Patterns.png"
                 alt="Understand your patterns — see the why behind the urge"
@@ -107,8 +114,15 @@ export default function Home() {
                 className="listing-image"
               />
             </div>
+            <div className="feature-copy">
+              <p className="eyebrow">Patterns</p>
+              <h2 className="h2">Understand the why behind the urge.</h2>
+              <p>Every mood check-in and urge log quietly builds a picture of your recovery. Unbinge surfaces the patterns you can&apos;t see from inside the moment — the times of day, the feelings, the triggers — so you can meet them with awareness next time instead of shame.</p>
+            </div>
+          </div>
 
-            <div className="showcase-item">
+          <div className="feature-row">
+            <div className="feature-image">
               <Image
                 src="/listing/05_Youre_Not_Alone.png"
                 alt="You're not alone — a community without diet talk"
@@ -117,8 +131,15 @@ export default function Home() {
                 className="listing-image"
               />
             </div>
+            <div className="feature-copy">
+              <p className="eyebrow">Community</p>
+              <h2 className="h2">You&apos;re not alone in this.</h2>
+              <p>A small, private community of people walking the same path. No diet talk, no before-and-afters, no performance. Just honest posts from people who get it — and the quiet relief of knowing someone else had a hard Tuesday too.</p>
+            </div>
+          </div>
 
-            <div className="showcase-item">
+          <div className="feature-row reverse">
+            <div className="feature-image">
               <Image
                 src="/listing/06_Recovery_That_Sticks.png"
                 alt="Recovery that sticks — built to walk with you for life"
@@ -126,6 +147,11 @@ export default function Home() {
                 height={2796}
                 className="listing-image"
               />
+            </div>
+            <div className="feature-copy">
+              <p className="eyebrow">Journey</p>
+              <h2 className="h2">Recovery that&apos;s built to last.</h2>
+              <p>Fifteen stages of growth, a garden that grows with you, and tools designed for the long arc of recovery — not a 30-day challenge. Unbinge is built to walk with you for as long as you need it, at whatever pace your healing actually takes.</p>
             </div>
           </div>
         </div>

@@ -459,6 +459,7 @@ export default function Home() {
             <ul>
               <li><Link href="/privacy">Privacy policy</Link></li>
               <li><Link href="/terms">Terms of service</Link></li>
+              <li><Link href="/delete-account">Delete Account</Link></li>
             </ul>
           </div>
         </div>

@@ -4,56 +4,125 @@ type Props = {
   glow?: string;
 };
 
+function parseHex(hex: string): [number, number, number] {
+  const h = hex.replace("#", "");
+  return [
+    parseInt(h.slice(0, 2), 16),
+    parseInt(h.slice(2, 4), 16),
+    parseInt(h.slice(4, 6), 16),
+  ];
+}
+
+function toHex(r: number, g: number, b: number): string {
+  return `#${[r, g, b]
+    .map((v) => Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, "0"))
+    .join("")}`;
+}
+
+function mixBlack(hex: string, ratio: number): string {
+  const [r, g, b] = parseHex(hex);
+  const m = 1 - ratio;
+  return toHex(r * m, g * m, b * m);
+}
+
+function mixWhite(hex: string, ratio: number): string {
+  const [r, g, b] = parseHex(hex);
+  return toHex(r + (255 - r) * ratio, g + (255 - g) * ratio, b + (255 - b) * ratio);
+}
+
+function toRgba(hex: string, a: number): string {
+  const [r, g, b] = parseHex(hex);
+  return `rgba(${r}, ${g}, ${b}, ${a})`;
+}
+
+function brightness(hex: string): number {
+  const [r, g, b] = parseHex(hex);
+  return r + g + b;
+}
+
 export default function AnimatedOrb({ id, colors, glow }: Props) {
-  const isRainbow = colors.length > 2;
-  const light = colors[0];
-  const dark = colors[colors.length - 1];
+  const isMulti = colors.length >= 2;
+  const last = colors[colors.length - 1];
+  const first = colors[0];
+  const mid = colors[Math.floor(colors.length / 2)];
+
+  const lightStop = isMulti ? first : mixWhite(first, 0.28);
+  const midStop = isMulti ? mid : first;
+  const darkStop = mixBlack(last, 0.22);
+  const terminator = mixBlack(last, 0.6);
+
+  const blobColors = isMulti
+    ? colors.slice(0, 6)
+    : [mixWhite(first, 0.32), first, mixBlack(first, 0.18)];
+
+  const dominant = isMulti
+    ? [...colors].sort((a, b) => brightness(b) - brightness(a))[0]
+    : first;
+
+  const glowShadow = glow ?? toRgba(dominant, 0.35);
+
   const gradId = `orbGrad-${id}`;
+  const aoId = `orbAO-${id}`;
+  const rimId = `orbRim-${id}`;
   const clipId = `orbClip-${id}`;
-
-  const blobs = isRainbow
-    ? colors.map((c, i) => ({ color: c, slot: (i % 6) + 1 }))
-    : [
-        { color: light, slot: 1 },
-        { color: dark, slot: 2 },
-        { color: light, slot: 3 },
-      ];
-
-  const glowColor = glow ?? `${dark}66`;
 
   return (
     <div
-      className={`stage-orb animated-orb${isRainbow ? " rainbow-orb" : ""}`}
+      className={`stage-orb animated-orb${isMulti ? " multi-orb" : ""}`}
       style={{
-        boxShadow: `0 0 14px ${glowColor}, 0 6px 16px rgba(27, 77, 98, 0.18)`,
+        boxShadow: `0 14px 22px -8px rgba(0, 0, 0, 0.38), 0 0 22px ${glowShadow}`,
       }}
     >
       <svg viewBox="0 0 100 100" aria-hidden="true">
         <defs>
-          <radialGradient id={gradId} cx="30%" cy="25%" r="75%">
+          <radialGradient id={gradId} cx="30%" cy="25%" r="85%">
             <stop offset="0%" stopColor="#ffffff" stopOpacity="0.95" />
-            <stop offset="25%" stopColor={light} />
-            <stop offset="70%" stopColor={dark} />
-            <stop offset="100%" stopColor={dark} stopOpacity="0.92" />
+            <stop offset="20%" stopColor={lightStop} />
+            <stop offset="55%" stopColor={midStop} />
+            <stop offset="85%" stopColor={darkStop} />
+            <stop offset="100%" stopColor={terminator} />
+          </radialGradient>
+          <radialGradient id={aoId} cx="50%" cy="72%" r="42%">
+            <stop offset="0%" stopColor="#000000" stopOpacity="0.55" />
+            <stop offset="55%" stopColor="#000000" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+          </radialGradient>
+          <radialGradient id={rimId} cx="72%" cy="72%" r="48%">
+            <stop offset="60%" stopColor="#ffffff" stopOpacity="0" />
+            <stop offset="92%" stopColor="#ffffff" stopOpacity="0.32" />
+            <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
           </radialGradient>
           <clipPath id={clipId}>
             <circle cx="50" cy="50" r="50" />
           </clipPath>
         </defs>
+
         <circle cx="50" cy="50" r="50" fill={`url(#${gradId})`} />
+
         <g clipPath={`url(#${clipId})`} className="orb-blobs">
-          {blobs.map((b, i) => (
+          {blobColors.map((c, i) => (
             <circle
               key={i}
               cx="50"
               cy="50"
-              r="22"
-              fill={b.color}
-              className={`orb-blob orb-blob-${b.slot}`}
+              r="30"
+              fill={c}
+              className={`orb-blob orb-blob-${i + 1}`}
             />
           ))}
         </g>
-        <ellipse cx="32" cy="28" rx="18" ry="10" fill="#ffffff" opacity="0.22" />
+
+        <circle
+          cx="50"
+          cy="50"
+          r="50"
+          fill={`url(#${aoId})`}
+          style={{ mixBlendMode: "multiply" }}
+        />
+        <circle cx="50" cy="50" r="50" fill={`url(#${rimId})`} />
+
+        <ellipse cx="32" cy="22" rx="13" ry="8" fill="#ffffff" opacity="0.35" />
+        <ellipse cx="32" cy="22" rx="8" ry="4.5" fill="#ffffff" opacity="0.9" />
       </svg>
     </div>
   );

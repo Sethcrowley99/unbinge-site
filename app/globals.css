@@ -246,12 +246,6 @@ a:hover { color: var(--coral-deep); }
   flex-wrap: wrap;
   margin-bottom: 18px;
 }
-.hero-foot {
-  font-size: 13px;
-  color: var(--muted);
-  margin: 0;
-}
-
 /* ============ LISTING IMAGE (shared) ============ */
 
 .listing-image {

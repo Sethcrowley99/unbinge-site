@@ -53,9 +53,6 @@ export default function Home() {
                 </svg>
               </a>
             </div>
-            <p className="hero-foot">
-              Cancel anytime · No ads, ever
-            </p>
           </div>
 
           <div className="hero-v3-image">

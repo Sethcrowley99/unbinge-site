@@ -19,15 +19,15 @@ function toHex(r: number, g: number, b: number): string {
     .join("")}`;
 }
 
+function lighten(hex: string, amount: number): string {
+  const [r, g, b] = parseHex(hex);
+  return toHex(r + 255 * amount, g + 255 * amount, b + 255 * amount);
+}
+
 function mixBlack(hex: string, ratio: number): string {
   const [r, g, b] = parseHex(hex);
   const m = 1 - ratio;
   return toHex(r * m, g * m, b * m);
-}
-
-function mixWhite(hex: string, ratio: number): string {
-  const [r, g, b] = parseHex(hex);
-  return toHex(r + (255 - r) * ratio, g + (255 - g) * ratio, b + (255 - b) * ratio);
 }
 
 function toRgba(hex: string, a: number): string {
@@ -42,18 +42,18 @@ function brightness(hex: string): number {
 
 export default function AnimatedOrb({ id, colors, glow }: Props) {
   const isMulti = colors.length >= 2;
-  const last = colors[colors.length - 1];
   const first = colors[0];
+  const last = colors[colors.length - 1];
   const mid = colors[Math.floor(colors.length / 2)];
 
-  const lightStop = isMulti ? first : mixWhite(first, 0.28);
+  const lightStop = isMulti ? first : lighten(first, 0.28);
   const midStop = isMulti ? mid : first;
   const darkStop = mixBlack(last, 0.22);
-  const terminator = mixBlack(last, 0.6);
+  const terminator = mixBlack(last, 0.58);
 
   const blobColors = isMulti
     ? colors.slice(0, 6)
-    : [mixWhite(first, 0.32), first, mixBlack(first, 0.18)];
+    : [lighten(first, 0.2), lighten(first, 0.35), lighten(first, 0.5)];
 
   const dominant = isMulti
     ? [...colors].sort((a, b) => brightness(b) - brightness(a))[0]
@@ -62,7 +62,6 @@ export default function AnimatedOrb({ id, colors, glow }: Props) {
   const glowShadow = glow ?? toRgba(dominant, 0.35);
 
   const gradId = `orbGrad-${id}`;
-  const aoId = `orbAO-${id}`;
   const rimId = `orbRim-${id}`;
   const clipId = `orbClip-${id}`;
 
@@ -82,14 +81,9 @@ export default function AnimatedOrb({ id, colors, glow }: Props) {
             <stop offset="85%" stopColor={darkStop} />
             <stop offset="100%" stopColor={terminator} />
           </radialGradient>
-          <radialGradient id={aoId} cx="50%" cy="72%" r="42%">
-            <stop offset="0%" stopColor="#000000" stopOpacity="0.55" />
-            <stop offset="55%" stopColor="#000000" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#000000" stopOpacity="0" />
-          </radialGradient>
           <radialGradient id={rimId} cx="72%" cy="72%" r="48%">
             <stop offset="60%" stopColor="#ffffff" stopOpacity="0" />
-            <stop offset="92%" stopColor="#ffffff" stopOpacity="0.32" />
+            <stop offset="92%" stopColor="#ffffff" stopOpacity="0.3" />
             <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
           </radialGradient>
           <clipPath id={clipId}>
@@ -105,20 +99,14 @@ export default function AnimatedOrb({ id, colors, glow }: Props) {
               key={i}
               cx="50"
               cy="50"
-              r="30"
+              r="45"
               fill={c}
+              opacity="0.6"
               className={`orb-blob orb-blob-${i + 1}`}
             />
           ))}
         </g>
 
-        <circle
-          cx="50"
-          cy="50"
-          r="50"
-          fill={`url(#${aoId})`}
-          style={{ mixBlendMode: "multiply" }}
-        />
         <circle cx="50" cy="50" r="50" fill={`url(#${rimId})`} />
 
         <ellipse cx="32" cy="22" rx="13" ry="8" fill="#ffffff" opacity="0.35" />

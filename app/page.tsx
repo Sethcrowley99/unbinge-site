@@ -370,7 +370,7 @@ export default function Home() {
             </details>
             <details>
               <summary>What are the 15 growth stages?<span className="chev">+</span></summary>
-              <p>The garden growth ladder goes from Seed (day 1) to Worldtree (day 730+), with 13 stages in between. Each stage has a unique orb that represents where you are on your journey. It&apos;s a non-numerical way to feel the distance you&apos;ve traveled.</p>
+              <p>The garden growth ladder goes from Seed (day 1) to Worldtree (day 365+), with 13 stages in between. Each stage has a unique orb that represents where you are on your journey. It&apos;s a non-numerical way to feel the distance you&apos;ve traveled.</p>
             </details>
             <details>
               <summary>Can Unbinge replace my therapist?<span className="chev">+</span></summary>

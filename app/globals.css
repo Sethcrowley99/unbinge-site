@@ -468,28 +468,49 @@ a:hover { color: var(--coral-deep); }
   letter-spacing: 0.04em;
 }
 
-.s1  { background: radial-gradient(circle at 35% 30%, #E8D5B7, #C9A678); }
-.s2  { background: radial-gradient(circle at 35% 30%, #C8DBAF, #8BA66E); }
-.s3  { background: radial-gradient(circle at 35% 30%, #A6CF97, #5EAD82); }
-.s4  { background: radial-gradient(circle at 35% 30%, #7DBF9F, #3E8E6E); }
-.s5  { background: radial-gradient(circle at 35% 30%, #F5B7A0, #E8956A); }
-.s6  { background: radial-gradient(circle at 35% 30%, #F5A089, #E07856); }
-.s7  { background: radial-gradient(circle at 35% 30%, #B7D5E2, #5A8FA6); }
-.s8  { background: radial-gradient(circle at 35% 30%, #89B9D0, #3E7590); }
-.s9  { background: radial-gradient(circle at 35% 30%, #6FA8C3, #2E6178); }
-.s10 { background: radial-gradient(circle at 35% 30%, #9FAFCF, #5A6E9A); }
-.s11 { background: radial-gradient(circle at 35% 30%, #B09FCF, #7A5E9A); }
-.s12 { background: radial-gradient(circle at 35% 30%, #CFA8C3, #9A5E8E); }
-.s13 { background: radial-gradient(circle at 35% 30%, #E8C5A0, #C98F56); }
-.s14 { background: radial-gradient(circle at 35% 30%, #F5D9B7, #D4A678); }
-.s15 {
-  background:
-    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.6), transparent 40%),
-    conic-gradient(from 0deg, #E8956A, #5EAD82, #89B9D0, #B09FCF, #E8956A);
-  box-shadow:
-    inset -8px -10px 20px rgba(0, 0, 0, 0.2),
-    inset 6px 8px 16px rgba(255, 255, 255, 0.5),
-    0 8px 22px rgba(232, 149, 106, 0.35);
+.animated-orb {
+  overflow: hidden;
+  contain: paint;
+}
+.animated-orb svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: saturate(1.3) brightness(1.05);
+}
+.orb-blobs .orb-blob {
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+  mix-blend-mode: screen;
+  filter: blur(6px);
+}
+.orb-blob-1 { animation: orb-swirl-1 3.5s ease-in-out infinite; }
+.orb-blob-2 { animation: orb-swirl-2 4s   ease-in-out infinite; animation-delay: -1.2s; }
+.orb-blob-3 { animation: orb-swirl-3 4.5s ease-in-out infinite; animation-delay: -2.5s; }
+.orb-blob-4 { animation: orb-swirl-1 3.8s ease-in-out infinite reverse; animation-delay: -0.8s; }
+.orb-blob-5 { animation: orb-swirl-2 4.2s ease-in-out infinite reverse; animation-delay: -1.6s; }
+.orb-blob-6 { animation: orb-swirl-3 3.3s ease-in-out infinite reverse; animation-delay: -2.1s; }
+
+.rainbow-orb svg { filter: saturate(1.55) brightness(1.12); }
+
+@keyframes orb-swirl-1 {
+  0%, 100% { transform: translate(-16px, -8px)  scale(1);    }
+  33%      { transform: translate( 12px, 16px)  scale(1.15); }
+  66%      { transform: translate( -8px, 12px)  scale(0.9);  }
+}
+@keyframes orb-swirl-2 {
+  0%, 100% { transform: translate( 16px,  8px)  scale(1.1);  }
+  33%      { transform: translate(-12px,-16px)  scale(0.95); }
+  66%      { transform: translate(  8px,-12px)  scale(1.2);  }
+}
+@keyframes orb-swirl-3 {
+  0%, 100% { transform: translate(  0,   14px)  scale(1.05); }
+  50%      { transform: translate(  0,  -14px)  scale(0.95); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-blobs .orb-blob { animation: none !important; }
 }
 
 /* ============ BENEFITS ============ */

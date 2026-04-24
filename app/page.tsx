@@ -1,5 +1,29 @@
 import Link from "next/link";
 import Image from "next/image";
+import AnimatedOrb from "./components/AnimatedOrb";
+
+const STAGES: { name: string; day: string; colors: string[]; glow?: string }[] = [
+  { name: "Seed",        day: "Day 1",    colors: ["#E8D5B7", "#C9A678"] },
+  { name: "Sprout",      day: "Day 3",    colors: ["#C8DBAF", "#8BA66E"] },
+  { name: "Sapling",     day: "Day 7",    colors: ["#A6CF97", "#5EAD82"] },
+  { name: "Rooted",      day: "Day 14",   colors: ["#7DBF9F", "#3E8E6E"] },
+  { name: "Budding",     day: "Day 21",   colors: ["#F5B7A0", "#E8956A"] },
+  { name: "Blooming",    day: "Day 30",   colors: ["#F5A089", "#E07856"] },
+  { name: "Thriving",    day: "Day 45",   colors: ["#B7D5E2", "#5A8FA6"] },
+  { name: "Grove",       day: "Day 60",   colors: ["#89B9D0", "#3E7590"] },
+  { name: "Orchard",     day: "Day 90",   colors: ["#6FA8C3", "#2E6178"] },
+  { name: "Canopy",      day: "Day 120",  colors: ["#9FAFCF", "#5A6E9A"] },
+  { name: "Heartwood",   day: "Day 180",  colors: ["#B09FCF", "#7A5E9A"] },
+  { name: "Elder Tree",  day: "Day 270",  colors: ["#CFA8C3", "#9A5E8E"] },
+  { name: "Grovekeeper", day: "Day 365",  colors: ["#E8C5A0", "#C98F56"] },
+  { name: "Sanctuary",   day: "Day 500",  colors: ["#F5D9B7", "#D4A678"] },
+  {
+    name: "Worldtree",
+    day: "Day 730+",
+    colors: ["#89B9D0", "#E8956A", "#5EAD82", "#B87BAE", "#F5D76E", "#7BA7BC"],
+    glow: "rgba(232, 149, 106, 0.55)",
+  },
+];
 
 export default function Home() {
   return (
@@ -227,21 +251,13 @@ export default function Home() {
           <p className="section-lead">Recovery isn&apos;t linear, but growth is real. Each stage of your garden reflects the quiet work you&apos;re putting in.</p>
 
           <div className="stage-grid">
-            <div className="stage"><div className="stage-orb s1"></div><span>Seed</span><small>Day 1</small></div>
-            <div className="stage"><div className="stage-orb s2"></div><span>Sprout</span><small>Day 3</small></div>
-            <div className="stage"><div className="stage-orb s3"></div><span>Sapling</span><small>Day 7</small></div>
-            <div className="stage"><div className="stage-orb s4"></div><span>Rooted</span><small>Day 14</small></div>
-            <div className="stage"><div className="stage-orb s5"></div><span>Budding</span><small>Day 21</small></div>
-            <div className="stage"><div className="stage-orb s6"></div><span>Blooming</span><small>Day 30</small></div>
-            <div className="stage"><div className="stage-orb s7"></div><span>Thriving</span><small>Day 45</small></div>
-            <div className="stage"><div className="stage-orb s8"></div><span>Grove</span><small>Day 60</small></div>
-            <div className="stage"><div className="stage-orb s9"></div><span>Orchard</span><small>Day 90</small></div>
-            <div className="stage"><div className="stage-orb s10"></div><span>Canopy</span><small>Day 120</small></div>
-            <div className="stage"><div className="stage-orb s11"></div><span>Heartwood</span><small>Day 180</small></div>
-            <div className="stage"><div className="stage-orb s12"></div><span>Elder Tree</span><small>Day 270</small></div>
-            <div className="stage"><div className="stage-orb s13"></div><span>Grovekeeper</span><small>Day 365</small></div>
-            <div className="stage"><div className="stage-orb s14"></div><span>Sanctuary</span><small>Day 500</small></div>
-            <div className="stage"><div className="stage-orb s15"></div><span>Worldtree</span><small>Day 730+</small></div>
+            {STAGES.map((stage, i) => (
+              <div key={stage.name} className="stage">
+                <AnimatedOrb id={`orb-${i + 1}`} colors={stage.colors} glow={stage.glow} />
+                <span>{stage.name}</span>
+                <small>{stage.day}</small>
+              </div>
+            ))}
           </div>
         </div>
       </section>

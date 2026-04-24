@@ -14,9 +14,9 @@ const STAGES: { name: string; day: string; colors: string[]; glow?: string }[] =
   { name: "Orchard",     day: "Day 90",   colors: ["#1F6487"] },
   { name: "Canopy",      day: "Day 120",  colors: ["#7A8DC9", "#B57BAE"] },
   { name: "Heartwood",   day: "Day 180",  colors: ["#9B7BC9", "#C98CD1", "#7A8DC9"] },
-  { name: "Elder Tree",  day: "Day 270",  colors: ["#C97BC9", "#E8956A", "#C98CD1"] },
-  { name: "Grovekeeper", day: "Day 365",  colors: ["#E8B56A", "#F19670", "#E8D08A"] },
-  { name: "Sanctuary",   day: "Day 500",  colors: ["#E8D08A", "#A8D079", "#7DBEDC", "#F19670"] },
+  { name: "Elder Tree",  day: "Day 240",  colors: ["#C97BC9", "#E8956A", "#C98CD1"] },
+  { name: "Grovekeeper", day: "Day 300",  colors: ["#E8B56A", "#F19670", "#E8D08A"] },
+  { name: "Sanctuary",   day: "Day 340",  colors: ["#E8D08A", "#A8D079", "#7DBEDC", "#F19670"] },
   {
     name: "Worldtree",
     day: "Day 365+",

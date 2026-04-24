@@ -166,7 +166,7 @@ a:hover { color: var(--coral-deep); }
   transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
   font-family: inherit;
 }
-.btn-sm { padding: 14px 28px; font-size: 17px; }
+.btn-sm { padding: 14px 48px; font-size: 17px; }
 .btn-primary {
   background: var(--ink);
   color: var(--cream);

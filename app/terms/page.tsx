@@ -44,11 +44,10 @@ export default function TermsPage() {
           <h2>4. Subscriptions and payment</h2>
           <p>Unbinge offers two paid options:</p>
           <ul>
-            <li><strong>Annual subscription ($29.99/year)</strong> — auto-renews each year unless cancelled. You can cancel anytime in your Apple ID settings or Google Play account.</li>
-            <li><strong>Lifetime access ($49.99 one-time)</strong> — a single payment for ongoing access while the app remains available.</li>
+            <li><strong>Annual subscription</strong> — auto-renews each year unless cancelled. You can cancel anytime in your Apple ID settings or Google Play account.</li>
+            <li><strong>Lifetime access</strong> — a single payment for ongoing access while the app remains available.</li>
           </ul>
           <p>All payments are processed by Apple (App Store) or Google (Play Store). Refunds are handled according to Apple&apos;s and Google&apos;s refund policies — we don&apos;t process refunds directly, but we&apos;re happy to help you navigate their process.</p>
-          <p>Prices may change. If we raise prices for existing subscribers, we&apos;ll notify you in advance and give you a chance to cancel before renewal.</p>
 
           <h2>5. Acceptable use</h2>
           <p>You agree not to:</p>

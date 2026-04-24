@@ -54,7 +54,7 @@ export default function Home() {
               </a>
             </div>
             <p className="hero-foot">
-              $29.99/year or $49.99 lifetime · Cancel anytime · No ads, ever
+              Cancel anytime · No ads, ever
             </p>
           </div>
 
@@ -332,10 +332,6 @@ export default function Home() {
               <p>Unbinge is a mobile app for people recovering from binge eating. It combines a daily commit &amp; streak system, an AI companion named Koa, pattern insights across urges and moods, a private community feed, and a 15-stage growth journey. It&apos;s designed to be a companion — not a replacement for therapy or medical care.</p>
             </details>
             <details>
-              <summary>Is Unbinge free?<span className="chev">+</span></summary>
-              <p>Unbinge is a paid app. We charge $29.99 per year or $49.99 one-time for lifetime access. No ads. No selling your data. No free tier that traps you in a funnel. The money goes toward building the app and keeping Koa running securely.</p>
-            </details>
-            <details>
               <summary>Is it clinically grounded?<span className="chev">+</span></summary>
               <p>Every feature is designed around principles from evidence-based binge eating treatment — particularly enhanced cognitive behavioral therapy (CBT-E), dialectical behavior therapy (DBT) skills, and intuitive eating. Unbinge is not therapy and does not diagnose. It&apos;s a support tool that works alongside clinical care.</p>
             </details>
@@ -373,7 +369,7 @@ export default function Home() {
             </details>
             <details>
               <summary>How do I cancel my subscription?<span className="chev">+</span></summary>
-              <p>Annual subscriptions can be cancelled anytime through your Apple ID settings on iOS. Lifetime is a one-time purchase — there&apos;s nothing to cancel. Email <a href="mailto:support@unbingeapp.com">support@unbingeapp.com</a> if you need help.</p>
+              <p>Subscriptions can be cancelled anytime through your Apple ID settings on iOS or your Google Play account. Email <a href="mailto:support@unbingeapp.com">support@unbingeapp.com</a> if you need help.</p>
             </details>
           </div>
         </div>

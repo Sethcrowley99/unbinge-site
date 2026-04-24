@@ -19,7 +19,7 @@ const STAGES: { name: string; day: string; colors: string[]; glow?: string }[] =
   { name: "Sanctuary",   day: "Day 500",  colors: ["#E8D08A", "#A8D079", "#7DBEDC", "#F19670"] },
   {
     name: "Worldtree",
-    day: "Day 730+",
+    day: "Day 365+",
     colors: ["#89B9D0", "#E8956A", "#5EAD82", "#B87BAE", "#F5D76E", "#7BA7BC"],
     glow: "rgba(232, 149, 106, 0.55)",
   },

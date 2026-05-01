@@ -58,22 +58,12 @@ export default function Home() {
               A calming companion for people healing their relationship with food. Track the moments that matter, talk to Koa when urges hit, and grow through a recovery journey that meets you where you are.
             </p>
             <div className="hero-ctas">
-              <a href="#download" className="store-badge" aria-label="Download on the App Store">
+              <a href="https://apps.apple.com/us/app/unbinge-binge-eating-recovery/id6762101743" target="_blank" rel="noopener noreferrer" className="store-badge" aria-label="Download on the App Store">
                 <svg width="135" height="40" viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
                   <rect width="135" height="40" rx="7" fill="#0A1F2E"/>
                   <text x="30" y="16" fontFamily="sans-serif" fontSize="8" fill="#F5F0EB" letterSpacing="0.3">Download on the</text>
                   <text x="30" y="30" fontFamily="sans-serif" fontSize="15" fontWeight="700" fill="#F5F0EB">App Store</text>
                   <path d="M18 12c0-1 .5-2 1.5-2.5-.5-1-1.5-1.5-2.5-1.5-1 0-2 .5-2.5.5s-1.5-.5-2.5-.5c-1.5 0-3 1-3.5 2.5-1.5 2.5-.5 6.5 1 8.5.5 1 1.5 2 2.5 2s1.5-.5 2.5-.5 1.5.5 2.5.5 2-1 2.5-2c.5-.5 1-1.5 1-2.5-1.5-.5-2.5-2-2.5-4z" fill="#F5F0EB"/>
-                </svg>
-              </a>
-              <a href="#download" className="store-badge" aria-label="Get it on Google Play">
-                <svg width="135" height="40" viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-                  <rect width="135" height="40" rx="7" fill="#0A1F2E"/>
-                  <text x="30" y="16" fontFamily="sans-serif" fontSize="7" fill="#F5F0EB" letterSpacing="0.3">GET IT ON</text>
-                  <text x="30" y="30" fontFamily="sans-serif" fontSize="14" fontWeight="700" fill="#F5F0EB">Google Play</text>
-                  <path d="M10 10v20l10-10-10-10z" fill="#E8956A"/>
-                  <path d="M10 10l10 10 4-4-10-6-4 0z" fill="#5EAD82" opacity="0.9"/>
-                  <path d="M10 30l10-10 4 4-10 6-4 0z" fill="#89B9D0" opacity="0.9"/>
                 </svg>
               </a>
             </div>
@@ -416,22 +406,12 @@ export default function Home() {
           <h2 className="h1">Recovery, gently.</h2>
           <p className="lead">Unbinge is ready when you are. Your first day is waiting.</p>
           <div className="hero-ctas">
-            <a href="#" className="store-badge" aria-label="Download on the App Store">
+            <a href="https://apps.apple.com/us/app/unbinge-binge-eating-recovery/id6762101743" target="_blank" rel="noopener noreferrer" className="store-badge" aria-label="Download on the App Store">
               <svg width="135" height="40" viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
                 <rect width="135" height="40" rx="7" fill="#0A1F2E"/>
                 <text x="30" y="16" fontFamily="sans-serif" fontSize="8" fill="#F5F0EB" letterSpacing="0.3">Download on the</text>
                 <text x="30" y="30" fontFamily="sans-serif" fontSize="15" fontWeight="700" fill="#F5F0EB">App Store</text>
                 <path d="M18 12c0-1 .5-2 1.5-2.5-.5-1-1.5-1.5-2.5-1.5-1 0-2 .5-2.5.5s-1.5-.5-2.5-.5c-1.5 0-3 1-3.5 2.5-1.5 2.5-.5 6.5 1 8.5.5 1 1.5 2 2.5 2s1.5-.5 2.5-.5 1.5.5 2.5.5 2-1 2.5-2c.5-.5 1-1.5 1-2.5-1.5-.5-2.5-2-2.5-4z" fill="#F5F0EB"/>
-              </svg>
-            </a>
-            <a href="#" className="store-badge" aria-label="Get it on Google Play">
-              <svg width="135" height="40" viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-                <rect width="135" height="40" rx="7" fill="#0A1F2E"/>
-                <text x="30" y="16" fontFamily="sans-serif" fontSize="7" fill="#F5F0EB" letterSpacing="0.3">GET IT ON</text>
-                <text x="30" y="30" fontFamily="sans-serif" fontSize="14" fontWeight="700" fill="#F5F0EB">Google Play</text>
-                <path d="M10 10v20l10-10-10-10z" fill="#E8956A"/>
-                <path d="M10 10l10 10 4-4-10-6-4 0z" fill="#5EAD82" opacity="0.9"/>
-                <path d="M10 30l10-10 4 4-10 6-4 0z" fill="#89B9D0" opacity="0.9"/>
               </svg>
             </a>
           </div>

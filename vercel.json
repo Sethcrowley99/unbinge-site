@@ -1,5 +1,13 @@
 {
   "redirects": [
     { "source": "/community", "destination": "/community-guidelines", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/.well-known/apple-app-site-association",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" }
+      ]
+    }
   ]
 }

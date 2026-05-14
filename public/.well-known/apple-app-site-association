@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "U3T3L29588.com.unbinge.app",
+        "paths": ["/reset-password", "/reset-password/*"]
+      }
+    ]
+  }
+}
